@@ -8,28 +8,40 @@
 
          <title>WAP Project List</title>         
         <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/style.css">
 
       </head>
 
       <body>
-         <img id="profile-pic" src="images/rajeev.jpg"  alt="Rajeev Thapaliya" title="profile pic">
-         <span title="My name"><i>Rajeev Thapaliya</i></span><br>
-         <span title="My entry"><em>November 2020</em></span><br>
-         <span title="My country"><em>Nepal</em></span><!--title is used for tooltip-->
-         <hr>
-         <h1>Lab Assignment</h1>
-
-         <ul>
-            <li><a href="WAP/hello-world.html" target="_blank">Hello World Webpage</a></li>
-            <li><a href="index.html">Homepage (Lab 0)</a></li>
-         </ul>
+         <header>
+            <figure>
+               <img id="profile-pic" src="images/rajeev.jpg"  alt="Rajeev Thapaliya" title="profile pic">
+               <figcaption>
+                  <span title="My name"><i>Rajeev Thapaliya</i></span><br>
+                  <span title="My entry"><em>November 2020</em></span><br>
+                  <span title="My country"><em>Nepal</em></span><!--title is used for tooltip-->
+               </figcaption>
+            </figure>
+         </header>
          
-         <hr>
+         <div class="list-item">
+            <h1>Lab Assignment</h1>
 
-         <p>
-            <a href="http://validator.w3.org/check?uri=referer" onclick="this.href='http://validator.w3.org/check?uri=' + 
-              document.URL"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88"></a>
-        </p>
+            <ul>
+               <li><a href="WAP/hello-world.html" target="_blank">Hello World Webpage</a></li>
+               <li><a href="index.html">Homepage (Lab 0)</a></li>
+            </ul>
+
+         </div>
+
+
+         <footer>
+            <span class="copyright-text">Copyright &copy; 2021. Designed by Rajeev</span>
+            <span class="html-validator">
+               <a href="http://validator.w3.org/check?uri=referer" onclick="this.href='http://validator.w3.org/check?uri=' + 
+               document.URL"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88"></a>
+            </span>
+        </footer>
                   
 
       </body>
