@@ -1,0 +1,7 @@
+body {background-color: powderblue;} 
+#hello-text{
+    color:blue;
+    font-family:courier;
+    font-size:120%;
+    text-align:center;
+}
