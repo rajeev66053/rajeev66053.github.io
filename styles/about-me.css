@@ -10,8 +10,13 @@ em{
 h2{
     text-transform: capitalize;
 }
-p,ul,span,ol,figcaption{
+p,ul,span,ol{
     color:#ffffff;
+}
+.column >span{
+    
+    color:#ffffff;
+
 }
 ol{
     list-style-type: 1;
@@ -19,7 +24,10 @@ ol{
 li > span{
     color:red !important;
 }
-figure img{
+.column{
+    display: inline-flex;
+}
+.column > img{
     height:120px;
     width:120px;
     display: flex;
