@@ -1,6 +1,26 @@
 body{
-    background-color: rgb(22, 44, 22);
+    background-color:#585646;
+}
+h1,h2 {
+    color:#a5c1fd;
+}
+em{
+    color:#f4fb82;
+}
+h2{
+    text-transform: capitalize;
+}
+p,ul,span,ol,figcaption{
+    color:#ffffff;
 }
 ol{
     list-style-type: 1;
+}
+li > span{
+    color:red !important;
+}
+figure img{
+    height:120px;
+    width:120px;
+    display: flex;
 }
