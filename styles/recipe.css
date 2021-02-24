@@ -1,0 +1,65 @@
+h1,h2{
+    color:#A4A400;
+    background-color: #F0F0F0;
+    display: table;
+    text-decoration: underline;
+    letter-spacing: 0.25em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1{
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+h2{
+    text-align: left;
+    font-size: 18pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+body{
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: url(../images/recipe_images/silverware.jpg);
+}
+p{
+    color: #404040;
+    font-size: 11pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a{
+    color:  #A4A400;
+}
+ul{
+    list-style-image: url('../images/recipe_images/pie_icon.gif');
+}
+
+.recipe-details >ul{
+    list-style-type:none;    
+    padding: 0;
+    list-style-image: none;
+    
+}
+
+blockquote{
+    background-color: #FFFFA8;
+    font-style: italic;
+}
+.html-validator, .css-validator{
+    float:right;
+
+}
+.validator{
+    display: grid;
+}
+
+    
+.column-right{
+    width: 25%;
+    float: right;
+    text-align: left;
+}
+.column-right > span.pipe{
+    float: right;
+}
