@@ -49,6 +49,9 @@ blockquote{
     background-color: #FFFFA8;
     font-style: italic;
 }
+p.small {
+    line-height: 1;
+  }
 .html-validator, .css-validator{
     float:right;
 
