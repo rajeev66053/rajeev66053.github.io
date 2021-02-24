@@ -12,3 +12,6 @@ footer{
     color: white;
     text-align: center;
 }
+* {
+    box-sizing: border-box;
+  }

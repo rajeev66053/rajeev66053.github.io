@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+  }
 h1,h2{
     color:#A4A400;
     background-color: #F0F0F0;
@@ -50,8 +53,10 @@ blockquote{
     float:right;
 
 }
-.validator{
-    display: grid;
+.validator:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
     
@@ -62,4 +67,40 @@ blockquote{
 }
 .column-right > span.pipe{
     float: right;
+}
+footer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media (max-width:980px) {
+    /* For mobile phones: */
+    .column-right {
+      width:33%;
+    }
+}
+@media (max-width:720px) {
+    .column-right {
+      width:45%;
+    }
+}
+@media (max-width:640px) {
+    /* For mobile phones: */
+    .column-right {
+      width:50%;
+    }
+}
+
+@media (max-width:480px) {
+    /* For mobile phones: */
+    .column-right {
+      width:75%;
+    }
+}
+
+@media (max-width:320px) {
+    /* For mobile phones: */
+    .column-right {
+      width:100%;
+    }
 }
