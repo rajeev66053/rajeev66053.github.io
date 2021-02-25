@@ -1,0 +1,118 @@
+*{
+    font-family: Verdana, Tahoma, sans-serif;
+}
+body{
+    background-image: url(../images/tmnt_images/background.png);
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-image: url(../images/tmnt_images/bannerbg.png);
+    background-repeat: repeat-x;
+    width: 100%;
+}
+.header > img{
+    display: block; /* to center an image */
+    margin: auto; /* to center an image */
+}
+h1{
+    text-align: center;
+    text-shadow: 3px 3px #999999;
+    font-size: 24pt;
+    font-weight: bold;
+}
+.movie-detail{
+    border:  4px gray solid;
+    border-radius: 20px;
+    width: 800px;    
+    margin: auto; /* to center the div */
+    overflow: auto;
+}
+.movie_detail-body{
+    display: flex; /* makes all the child element height same */
+}
+.heading{
+    background-image: url(../images/tmnt_images/rbg.png);
+    background-repeat: repeat-x;
+    border-top-left-radius: 16px;
+    overflow: hidden;
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+    display: flex;
+}
+div .left{
+    width: 550px;    
+    float: left;
+    overflow: auto;
+}
+div .right{
+    background-color: #A2B964;
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    float: left;
+    border-top-right-radius: 16px;
+
+}
+.left .column{
+    width:47%;
+    float:left;
+    margin:1%;
+    
+}
+.section{
+    font-size: 8pt;
+    overflow: auto;
+    margin: 1%;
+}
+.section section{
+    padding: 8px;
+    margin:3px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    background-color: #E8DC9B;
+    line-height: 20pt;
+}
+section img{
+    margin-right: 5px;
+    float: left;
+}
+.section p > img{
+    margin-right: 5px;
+    float: left;
+}
+.overview-description{
+    padding: 10pt;
+}
+.overview-description ul{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+.overview-description dt{
+    font-weight: bold;
+    line-height: 10pt;
+}
+.footer{
+    text-align: center;
+    background-color: #A2B964;
+    clear: left;
+    border-bottom-left-radius: 16px;    
+    border-bottom-right-radius: 16px;
+}
+.footer p{
+    padding: 5px;
+    margin: 0;
+}
+.validator{
+    opacity: 50%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.validator >p{
+    display: flex;
+    flex-flow: column;
+}
