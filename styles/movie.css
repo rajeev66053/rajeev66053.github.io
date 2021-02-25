@@ -67,7 +67,7 @@ div .right{
     overflow: auto;
     margin: 1%;
 }
-.section section{
+.section .blockquote{
     padding: 8px;
     margin:3px;
     border: 2px solid grey;
@@ -75,7 +75,7 @@ div .right{
     background-color: #E8DC9B;
     line-height: 20pt;
 }
-section img{
+.blockquote > img{
     margin-right: 5px;
     float: left;
 }
