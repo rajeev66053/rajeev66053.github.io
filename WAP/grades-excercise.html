@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Rajeev Thapaliya">
+        <meta name="description" content="Grades Excercise Form">
+        <meta name="keywords" content="WAP lab,HTML,CSS, meta tag, tag reference">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referer" content="origin-when-cross-origin">
+
+        <title>Retrieve Grade</title>   
+        <link rel="stylesheet" href="../styles/grades_excercise.css">
+
+    </head>
+    <body>
+        <h1>Retrieve your grade</h1>
+        <form action="http://mumstudents.org/params.php" method="get">
+            <div>
+                <label for="student_name">Student Name:</label> 
+                <input type="text" neme="name" id="name" value="">                
+            </div>
+            <div>
+                <label for="student_id">Student Id:</label>
+                <input type="text" neme="id" id="id" value="">
+            </div>
+            <div>
+                <label for="grade">Grade For:</label>
+                 <select neme="assignment">
+                    <option name="WAP">WAP</option>
+                    <option name="algorithm">Algorithm</option>
+                    <option name="ea">EA</option>
+                    <option name="mwa">MWA</option>
+                </select>
+            </div>
+            <div>
+                <label for="student_entry">Student Entry:</label>
+                <label for="aug_2020">
+                    <input type="radio" id="aug_2020" name="entry" value="August,2020"> Aug,2020
+                </label>
+                <label for="nov_2020">
+                    <input type="radio" id="nov_2020" name="entry"  value="November,2020">Nov, 2020
+                </label>
+                <label for="feb_2021">
+                    <input type="radio" id="feb_2021" name="entry"  value="February,2021">Feb, 2021
+                </label>
+            </div>
+            <div>
+                <label for="confirm"><input type="checkbox" id="confirm" name="confirm" value="1">Please confirm</label>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+
+    </body>
+    </html>

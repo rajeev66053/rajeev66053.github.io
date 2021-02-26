@@ -73,7 +73,8 @@ div .right{
     border: 2px solid grey;
     border-radius: 10px;
     background-color: #E8DC9B;
-    line-height: 20pt;
+    line-height: 10pt;
+    font-weight: bold;
 }
 .blockquote > img{
     margin-right: 5px;
