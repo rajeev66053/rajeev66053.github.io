@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+  }
+  form{
+    width: 600px;
+  }
+fieldset{
+    background-color: #e1e0ff;
+    border-radius: 10px;
+    box-shadow: 4px 4px #4e4e50;
+    border-color: #d8d8d8;
+}
+legend{
+    border-style: outset;
+    background: #ffffff;
+}
+label{
+    display: inline-block;
+    font-weight: bold;
+}
+.label{
+    float: left;
+    width: 30%;
+    font-family: Verdana,Sans-serif;
+}
+.field{
+    float: left;
+    width: 70%;
+}
+
+
+input[type=text],input[type=number],input[type=radio],select{
+    padding: 5px;
+    border-style: inset;
+}
+input[type="number"]{
+    width: 20%;
+}
+#personality_type{
+
+    margin-right: 10px;
+}
+
+span>a{
+    color:#ec5348;
+    font-size: 14pt;
+    text-decoration: none;
+}
+.note,.copyright{
+    width:600px;
+    font-size:20px;
+}
+.back{
+    line-height: 1.5;
+    color: #f25f61;
+}
+.fa{
+    font-size: 24px;
+    color: #58b153;
+    float: left;
+    margin-right: 5px;
+}
+input[type="submit"]{
+    padding: 10px;
+    font-weight: bold;
+    background-color: #f6aaa9;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  #age,#personality_type,#min,#max{
+    /* width:15% */
+}
