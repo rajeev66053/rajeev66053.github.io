@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+}
+.form{
+    margin: auto;
+    width:550px;
+    background-color: burlywood;
+    border-radius: 5%;
+    box-shadow: 5px 5px grey;
+    position: relative;
+}
+form{
+    padding: 40px;
+}
+label{
+    font-weight: bold;
+}
+input[type="text"],input[type="checkbox"],select{
+    
+    padding: 5px;
+    border: 2px solid #b37d5d;
+    border-radius: 5px;
+    box-shadow: 1px 1px;
+
+}
+input[type="submit"]{
+    background: #73261f66;
+    box-shadow: 2px 2px grey;
+    padding: 10px;
+    border-radius: 5px;   
+     margin: 0 auto;
+    display: block;
+    
+}
+.row{
+    overflow: auto;
+    padding: 10px;;
+}
+.col-25{
+    width:25%;
+    float: left;
+}
+.col-75{
+    width:75%;
+    float: left;
+}
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
