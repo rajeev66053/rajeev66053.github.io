@@ -55,10 +55,10 @@ span>a{
     color: #f25f61;
 }
 .fa{
-    font-size: 24px
-    color: #58b153
-    float: left
-    margin-right: 5px
+    font-size: 24px;
+    color: #58b153;
+    float: left;
+    margin-right: 5px;
 }
 input[type="submit"]{
     padding: 10px;
