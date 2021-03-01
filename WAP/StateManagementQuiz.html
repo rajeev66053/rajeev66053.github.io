@@ -1,0 +1,79 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>State Management Quiz</title>
+
+<body>
+
+    <h3>Introduction to Servlets Quiz</h3>
+    <div>
+        <a href="http://mumstudents.org/cs472/2021-03-BL/quiz/State_Management_Quiz.pdf">Quiz pdf link</a>
+    </div>
+
+    <ol>
+        <li>
+            <p>Can post requests be bookmarked? What are the problems? </p>
+          
+           <p>A POST cannot be bookmarked. Attempting to bookmark a POST will just result in a GET operation on the URL.</p>
+        </li>
+        <li>
+            <p>What is the purpose of request dispatching?</p>
+           
+            <p>Request Dispatcher is an interface whose implementation defines an object which can dispatch the request to any resources on the server.</p>
+        </li>
+        <li>
+            <p>What is the difference between redirect and request dispatch?</p>
+            <p>The RequestDispatcher interface allows you to do a server side forward/include whereas sendRedirect() does a client side redirect. SendRedirect() will search the content between the servers.</p>
+        </li>
+        <li>
+           <p>What is an attribute?</p> 
+           <p>An attribute is an object that is used to share information in a web app. Attribute allows Servlets to share information among themselves. Attributes can be SET and GET from one of the following scopes :
+            <ol>
+                <li>request</li>
+                <li>session</li>
+                <li>application</li>
+            </ol>
+            </p>
+        </li>
+        <li>
+            <p>What is the difference between attributes and parameters? </p>
+            <p>The key difference between attribute and parameter is that an attribute is a variable of any type that is declared directly in a class while a parameter is a variable defined by the function that receives a value when it is called.</p>>
+        </li>
+        <li>
+            <p>What are dangers of using attributes?</p>
+            <p></p>
+        </li>
+        <li>
+            <p>What does it mean to say that http is stateless? Give an example of a stateful protocol. </p>
+           <p>HTTP is called as a stateless protocol because each request is executed independently, without any knowledge of the requests that were executed before it, which means once the transaction ends the connection between the browser and the server is also lost. FTP is a stateful protocol.</p>
+        </li>
+        <li>
+            <p>Give 5 different methods for maintaining state information (count each attribute scope as one method). </p>
+           <p>Five different methods for maintain State information are:
+               <ol>
+                   <li>request scope: destroyed when servlet finishes processing request</li>
+                   <li>session scope: destroyed when user closes browser</li>
+                   <li>application scope destroyed when Container stopped.</li>
+                   <li>Cookies saved on browser, temporary (deleted when the browser closes) permanent</li>
+                   <li>Hidden fields on a form</li>
+               </ol>
+            </p>
+        </li>
+        <li>
+            <p>How long does a session last? </p>
+             <p>By default, a session lasts until there's 30 minutes of inactivity, but you can adjust this limit so a session lasts from a few seconds to several hours. </p>
+         </li>
+        <li>
+           <p>What is a cookie, and how long does a cookie last?</p>
+            <p>A cookie is a small piece of information that is persisted between the multiple client requests. A cookie has a name, a single value, and optional attributes such as a comment, path and domain qualifiers, a maximum age, and a version number. If there's no expiration time in cookie it's going to be around until the browser is killed. </p>
+        </li>
+        <li>
+            <p>What is the purpose of URL rewriting?</p>
+             <p>Url rewriting is a process of appending or modifying any url structure while loading a page. The request made by client is always a new request and the server can not identify whether the current request is send by a new client or the previous same client.</p>
+         </li>
+         <li>
+            <p>Why does the request attribute report ‘null’ for the maintaining state demo?</p>
+             <p></p>
+         </li>
+    </ol>
+</body>
+</html>
