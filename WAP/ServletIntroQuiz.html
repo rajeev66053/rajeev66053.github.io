@@ -1,0 +1,69 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Introduction to Servlets Quiz</title>
+
+<body>
+
+    <h3>Introduction to Servlets Quiz</h3>
+    <div>
+        <a href="http://mumstudents.org/cs472/2021-03-BL/Labs/Servlet_Intro_Lab.pdf">Quiz pdf link</a>
+    </div>
+
+    <ol>
+        <li>
+            <p>What is the difference between a web server and a web container? </p>
+          
+           <p>Web Server or HTTP Server: A server which is capable of handling HTTP requests, sent by a client and respond back with a HTTP response.
+            In Java: Web Container or Servlet Container or Servlet Engine: is used to manage the components like Servlets, JSP. It is a part of the web server.</p>
+        </li>
+        <li>
+            <p></p>What is a servlet?
+           
+            <p>A servlet is a Java programming language class used to extend the capabilities of servers that host applications accessed by means of a request-response programming model.
+                Java Servlets are programs that run on a Web or Application server and act as a middle layer between a request coming from a Web browser or other HTTP client and databases or applications on the HTTP server.
+                </p>
+        </li>
+        <li>
+            <p>How do web servers and web containers interact with servlets?</p>
+            <p>A servlet container is the component of a web server that interacts with java servlets. A web container is responsible for managing the life-cycle of servlets, mapping a URL to a particular servlet and ensuring that the URL requester has the correct access rights and many more such services.
+                When the web server (e.g. Apache Tomcat) starts up, the servlet container deploy and loads all the servlets. 
+                The servlet doesn't talk to the client directly. The Web server does that. In a chain of processes, the client sends a request to the Web server, which hands it to the container, which hands it to the servlet (which sometimes hands it off yet again to a database or a JavaBean). The response retraces the course from the servlet to the container to the Web server to the client.
+                
+                When a request comes to the web server, if the server sees the request is for a servlet, it passes the request data to the servlet container.The servlet container locates the servlet, creates request and response objects and passes them to the servlet, and returns to the web server the response stream that the servlet produces. The web server sends the response back to the client browser to be rendered.
+                </p>
+        </li>
+        <li>
+           <p>Who creates request objects?</p> 
+           <p>Object of the HttpServletRequest is created by the Servlet container and, then, it is passed to the service method (doGet(), doPost(), etc.) of the Servlet.</p>
+        </li>
+        <li>
+            <p>What are the states in the servlet lifecycle?</p>
+            <ol>
+                <li>Load servlet class (Class c = Class.forname(...)) </li>
+                <li>Instantiate servlet (c.newInstance())</li>
+                <li>init() called only once in the servlet's life. Must complete before Container can call service().</li>
+                <li>service() (called for each request, each request runs in a separate thread) </li>
+                <li>destroy() (called only once)</li>
+            </ol>
+        </li>
+        <li>
+            <p>Who calls init and when?</p>
+            <p>The Container calls init() on the servlet instance after the servlet instance is created but before the servlet can service any client requests.</p>
+        </li>
+        <li>
+            <p>Which of init, service, and doGet should you override?</p>
+           <p>If you have initialization code (like getting a database connection or registering yourself with other objects), then you’ll override the init() method in your servlet class.
+            You should NOT override the service() method. Your job is to override the doGet() and/or doPost() methods and let the service() implementation from HTTPServlet worry about calling the right one.
+            </p>
+        </li>
+        <li>
+            <p>In what sense are servlets multi-threaded?</p>
+           <p>The servlet is protected from concurrent call until the initialization is complete. Once this has been done, all calls are executed simultaneously on your servlet. So, Servlets are multithreaded.</p>
+        </li>
+        <li>
+           <p>What are the implications of this for servlet instance variables?</p>
+            <p>Instance variables can be shared concurrently.</p>
+        </li>
+    </ol>
+</body>
+</html>
