@@ -36,7 +36,15 @@
         </li>
         <li>
             <p>What is the difference between attributes and parameters? </p>
-            <p>The key difference between attribute and parameter is that an attribute is a variable of any type that is declared directly in a class while a parameter is a variable defined by the function that receives a value when it is called.</p>
+            <p>Attributes are objects on the server. They promote communication between components.
+                An object bound into one of the three servlet API objects:
+                <ol>
+                    <li>HttpServletRequest</li>
+                    <li>HttpSession</li>
+                    <li>ServletContext</li>
+                </ol>
+            </p>
+            <p>The Request object reads parameters from a submitted HTML form by reading the name property</p>
         </li>
         <li>
             <p>What are dangers of using attributes?</p>
@@ -45,6 +53,7 @@
         <li>
             <p>What does it mean to say that http is stateless? Give an example of a stateful protocol. </p>
            <p>HTTP is called as a stateless protocol because each request is executed independently, without any knowledge of the requests that were executed before it, which means once the transaction ends the connection between the browser and the server is also lost. FTP is a stateful protocol.</p>
+           <p>HTTP is a stateless protocol, which means that after a web server responds to a request, there is no “memory” of the request or who sent it.</p>
         </li>
         <li>
             <p>Give 5 different methods for maintaining state information (count each attribute scope as one method). </p>
@@ -60,11 +69,11 @@
         </li>
         <li>
             <p>How long does a session last? </p>
-             <p>By default, a session lasts until there's 30 minutes of inactivity, but you can adjust this limit so a session lasts from a few seconds to several hours. </p>
+             <p>Session are the temporary cookies. Browser discards all “temporary” cookies when it closes.</p>
          </li>
         <li>
            <p>What is a cookie, and how long does a cookie last?</p>
-            <p>A cookie is a small piece of information that is persisted between the multiple client requests. A cookie has a name, a single value, and optional attributes such as a comment, path and domain qualifiers, a maximum age, and a version number. If there's no expiration time in cookie it's going to be around until the browser is killed. </p>
+            <p>A cookie is a small piece of information that is persisted between the multiple client requests. A cookie has a name, a single value, and optional attributes such as a comment, path and domain qualifiers, a maximum age, and a version number. If there's no expiration time in cookie it's going to be around until the browser is killed called a temporary cookie. If cookie has a maximum age it is called permanent cookie and last for thr age specified. </p>
         </li>
         <li>
             <p>What is the purpose of URL rewriting?</p>
@@ -72,7 +81,7 @@
          </li>
          <li>
             <p>Why does the request attribute report ‘null’ for the maintaining state demo?</p>
-             <p>It is default.</p>
+             <p> request scope: destroyed when servlet finishes processing request</p>
          </li>
     </ol>
 </body>
