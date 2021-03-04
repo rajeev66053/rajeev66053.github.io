@@ -58,11 +58,11 @@
         </li>
         <li>
             <p>In what sense are servlets multi-threaded?</p>
-           <p>The servlet is protected from concurrent call until the initialization is complete. Once this has been done, all calls are executed simultaneously on your servlet. So, Servlets are multithreaded.</p>
+           <p>In Servlet Life cycle, When container calls service method, methods will be called for each request and each request runs in a separate thread. So, Servlets are multi- threaded.</p>
         </li>
         <li>
            <p>What are the implications of this for servlet instance variables?</p>
-            <p>Instance variables can be shared concurrently.</p>
+            <p>In servlet Life cycle then service() method is called on the thread and all threads  share instance variables.</p>
         </li>
     </ol>
 </body>
