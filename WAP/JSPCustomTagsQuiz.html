@@ -16,21 +16,25 @@
 
             <p>
                 <pre>
-                    <%@ page import="com.miu.model.Student" %>
+                    <code><%@ page import="com.miu.model.Student" %></head>
             
+                    <code>
                     <% 
                         Student students[]=(Student[])request.getAttribute("students");
-                        out.println("<%table>");
+                        out.println("&lttable&gt");
                         for(Student student:students){
-                            out.println("<%tr>");
-                            out.println("<%td>"+student.getName()+"<%/td>");
-                            out.println("<%td>"+student.getAge()+"<%/td>");
-                            out.println("</%tr>");
+                            out.println("&lttr&gt");
+                            out.println("&lttd&gt"+student.getName()+"&lttd&gt");
+                            out.println("&lttd&gt"+student.getAge()+"&lt/td&gt");
+                            out.println("&lt/tr&gt");
                         }
                     
-                        out.println("</%table>");
+                        out.println("&lt/%table&gt");
                         
                     %>
+
+                    </code>
+                    
                     
                    </pre>
 
