@@ -13,24 +13,29 @@
         <li>
             <p>Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL forEach. </p>
           
-           <pre>
-            <%@ page import="com.miu.model.Student" %>
-	
-            <% 
-                Student students[]=(Student[])request.getAttribute("students");
-                out.println("<table>");
-                for(Student student:students){
-                    out.println("<tr>");
-                    out.println("<td>"+student.getName()+"</td>");
-                    out.println("<td>"+student.getAge()+"</td>");
-                    out.println("</tr>");
-                }
+
+            <p>
+                <pre>
+                    <%@ page import="com.miu.model.Student" %>
             
-                out.println("</table>");
-                
-            %>
-            
-           </pre>
+                    <% 
+                        Student students[]=(Student[])request.getAttribute("students");
+                        out.println("<%table>");
+                        for(Student student:students){
+                            out.println("<%tr>");
+                            out.println("<%td>"+student.getName()+"</%td>");
+                            out.println("<%td>"+student.getAge()+"</%td>");
+                            out.println("</%tr>");
+                        }
+                    
+                        out.println("</%table>");
+                        
+                    %>
+                    
+                   </pre>
+
+            </p>
+           
         </li>
         <li>
             <p>How do custom tags relate to JSTL </p>
@@ -40,7 +45,7 @@
         </li>
         <li>
             <p>What is the role of the URI in the TLD and the taglib directive?</p>
-            <p>The <uri> element in the TLD is a unique name for the tag library. It simply has to be a name—the same name you use in the taglib directive.</p>
+            <p>The URL element in the TLD is a unique name for the tag library. It simply has to be a name—the same name you use in the taglib directive.</p>
         </li>
         <li>
            <p>What is a tag handler class?</p> 
@@ -48,7 +53,7 @@
         </li>
         <li>
             <p>What is the role of attribute setters in a tag handler class? </p>
-            <p></p>
+            <p>Setters are for getting the inputs from JSP then change the instance variable values.</p>
         </li>
         <li>
             <p>What is the role of the doTag() method in a tag handler class?  </p>
@@ -60,7 +65,7 @@
         </li>
         <li>
             <p>What does the operation getJspBody().invoke(null) do when called in a doTag() method?</p>
-           <p></p>
+           <p>It will pass the content changed in doTag() method to the client directly instead of the JSP code.</p>
         </li>
     </ol>
 </body>
