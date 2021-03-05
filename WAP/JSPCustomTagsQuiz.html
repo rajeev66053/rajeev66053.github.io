@@ -1,0 +1,67 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>JSP Custom Tags Quiz</title>
+
+<body>
+
+    <h3>JSP Custom Tags Quiz</h3>
+    <div>
+        <a href="http://mumstudents.org/cs472/2021-03-BL/quiz/JSP_Custom_Tags_Quiz.pdf">Quiz pdf link</a>
+    </div>
+
+    <ol>
+        <li>
+            <p>Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL forEach. </p>
+          
+           <pre>
+            <%@ page import="com.miu.model.Student" %>
+	
+            <% 
+                Student students[]=(Student[])request.getAttribute("students");
+                out.println("<table>");
+                for(Student student:students){
+                    out.println("<tr>");
+                    out.println("<td>"+student.getName()+"</td>");
+                    out.println("<td>"+student.getAge()+"</td>");
+                    out.println("</tr>");
+                }
+            
+                out.println("</table>");
+                
+            %>
+            
+           </pre>
+        </li>
+        <li>
+            <p>How do custom tags relate to JSTL </p>
+           
+            <p>JSTL is standard tag which provides new tags for JSPs that reduce scripting. They use the custom tag api, but have become a standard library, essentially a part of JSP language.</p>
+            <p>JSTL is a standard library of JSP actions, but JSP allows developers to create their own actions. component development creates custom functionality that can be packaged and reused by content developers.</p>
+        </li>
+        <li>
+            <p>What is the role of the URI in the TLD and the taglib directive?</p>
+            <p>The <uri> element in the TLD is a unique name for the tag library. It simply has to be a name—the same name you use in the taglib directive.</p>
+        </li>
+        <li>
+           <p>What is a tag handler class?</p> 
+           <p>A tag handler class is basically a JavaBeans class, it should contain set of set methods and set of get methods. All the attributes of custom tag must be used as properties or data members in tag handler class in the same order in which they appear.</p>
+        </li>
+        <li>
+            <p>What is the role of attribute setters in a tag handler class? </p>
+            <p></p>
+        </li>
+        <li>
+            <p>What is the role of the doTag() method in a tag handler class?  </p>
+            <p>It passes a dynamic html element to JSP file using JSPWriter.write() method. </p>
+        </li>
+        <li>
+            <p>What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in a doTag() method? </p>
+            <p>It will add "Hi Bob" simple text element to JSP file.</p>
+        </li>
+        <li>
+            <p>What does the operation getJspBody().invoke(null) do when called in a doTag() method?</p>
+           <p></p>
+        </li>
+    </ol>
+</body>
+</html>
