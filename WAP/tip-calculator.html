@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+   <html lang="en-US">
+
+      <head>
+
+        <meta charset="UTF-8">
+
+        <title>Tip Calculator</title>
+        <style>
+            
+            body {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            body, input, button {
+                font-family: "Century Gothic",sans-serif;
+                font-size: 20pt;
+            }
+            div {
+                margin: 0.5em;
+            }
+        </style>
+
+      </head>
+
+      <body>
+            <h1>
+                <img id="logo" src="../images/calc.jpg" alt="calulator-logo">
+                Tip Calculator
+            </h1>
+
+            <div>
+                <label><input id="subtotal" type="text"> $ Subtotal</label>
+            </div>
+
+            <div>
+                <label><input id="tip" type="text"> % Tip</label>
+            </div>
+
+            <div>
+                <button id="btn" onclick="calcTip();">Calculate Tip</button>
+            </div>
+
+            <hr>
+
+            <div>
+                <h2>Your total:</h2>
+                <p id="total">$0.00</p>
+            </div>
+
+            <script>            
+    
+                function calcTip() {
+                    var subtotal=document.getElementById("subtotal").value;
+    
+                    subtotal=parseFloat(subtotal);
+                    
+                    console.log(subtotal);
+    
+                    var tip=document.getElementById("tip").value;
+    
+                    tip=parseFloat(tip);
+    
+                    console.log(tip);
+
+                    var total=0.00;
+                    if (!isNaN(subtotal) && !isNaN(tip)){
+                        total = (tip/100)*subtotal;
+                    }
+
+                    console.log(total);
+
+                    document.getElementById("total").innerHTML ="$"+total.toFixed(2);
+                }
+                
+            </script>
+        
+
+        </body>
+
+   </html>
