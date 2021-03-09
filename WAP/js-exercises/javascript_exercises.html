@@ -1,0 +1,58 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Javascript Exercises</title>
+
+<body>
+
+    <h3>Javascript Exercises</h3>
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/JavascriptExercises.pdf">Quiz pdf link</a>
+    </div>
+
+    <ol>
+        <li>
+            <p>What is the difference between the following 2 statements? </p>
+            <pre>
+                setTimeout(booyah, 2000);
+                setTimeout(booyah(), 2000);
+            </pre>
+            <p>The setTimeout without function parenthesis take the timeout value to display output but the  setTimeout with function parenthesis doesnot take time value. It will give output instantly.</p>
+        </li>
+        <li>
+            <p>What do the following 2 alerts display (answer without running the code)?</p>
+            <pre>
+                var myfunc = function(a, x) {
+                    return a * x;
+                   };
+                   var x = myfunc(2, 3);
+                   var y = myfunc;
+                   alert(x);
+                   alert(y(2,3));
+            </pre>
+            <p>It will first give alert as 6 using x as alert, then it will give another alert as 6 using y. </p>
+        </li>
+        <li>
+            <p>Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
+                says “BOOYAH!”</p>
+            <pre>
+                setTimeout(booyah1, 2000);
+                setTimeout(booyah2(), 2000);
+            </pre>
+            <p>The setTimeout without function parenthesis take the timeout value to display output but the  setTimeout with function parenthesis doesnot take time value. It will give output instantly.</p>
+        </li>
+        <li>
+            <p>What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons for using it)?</p>
+            <p>"Unobtrusive Javascript" means separation of content (HTML) and behavior (Javascript). It is the separation of behaviour from markup or structure. Unobtrusive JavaScript is the way of writing JavaScript language in which we properly separate Document Content and Script Content thus allowing us to make a clear distinction between them.</p>
+            <p>The major benefits of Unobtrusive JavaScripts are:</p>
+            <ul>
+                <li>Separation of the behavior from the markup (as happened for CSS with the separation of the presentation from the markup)</li>
+                <li>Reusable code (both HTML and JavaScript code)</li>
+                <li>Progressive enhancement</li>
+                <li>Capability detection and gracefully degradation, as the opposite of browser detection. You can easily skip an entire JavaScript fragment if the current browser doesn't support it or likewise use the JavaScript to replace features not natively supported (such as HTML 5 features).</li>
+                <li>Better cache support</li>
+
+            </ul>
+        </li>
+    </ol>
+    </body>
+</head>
