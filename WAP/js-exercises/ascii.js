@@ -1,6 +1,5 @@
-"use strict";
-window.onload=function(){    
-    
+window.onload=function(){   
+    "use strict";
     var textArea=document.getElementById("myTextArea");
 
     var startButton=document.getElementById("start");
@@ -51,7 +50,7 @@ window.onload=function(){
     speedCheck.onchange=function(){
         delayTime=checkSpeed();
         animation(delayTime,false);
-    }
+    };
 
     function checkSpeed(){
         return (speedCheck.checked==true)? 50: 250;
@@ -78,13 +77,12 @@ window.onload=function(){
         return arrayData;
     }
 
-    function animation(delayTime,stopAnimation){
-     
+    function animation(delayTime,stopAnimation){     
+        /*jshint sub:true*/
         var animationSelectedvalue=animationSelect.value;        
         clearInterval(interval);
-        console.log(delayTime);
-        console.log(stopAnimation);
-
+        var index=0;
+        var arrayData;
         if(stopAnimation){
             clearInterval(interval);
         }else{
@@ -92,9 +90,8 @@ window.onload=function(){
                 case "blank":
                     textArea.value=ANIMATIONS["Blank"];
                     break;
-                case "exercise":
-                    var index=0;    
-                    var arrayData=getAnimationArray("Exercise");
+                case "exercise":   
+                    arrayData=getAnimationArray("Exercise");
                     interval=setInterval(function(){
                             textArea.value=arrayData[index];
                             index++;
@@ -103,9 +100,8 @@ window.onload=function(){
                             }    
                         },delayTime);
                     break;
-                case "juggler":
-                    var index=0;    
-                    var arrayData=getAnimationArray("Juggler");
+                case "juggler":  
+                    arrayData=getAnimationArray("Juggler");
                     interval=setInterval(function(){
                             textArea.value=arrayData[index];
                             index++;
@@ -114,9 +110,8 @@ window.onload=function(){
                             }    
                         },delayTime);
                     break;
-                case "bike":
-                    var index=0;    
-                    var arrayData=getAnimationArray("Bike");
+                case "bike":   
+                    arrayData=getAnimationArray("Bike");
                     interval=setInterval(function(){
                             textArea.value=arrayData[index];
                             index++;
@@ -125,9 +120,8 @@ window.onload=function(){
                             }    
                         },delayTime);
                     break;
-                case "dive":
-                    var index=0;    
-                    var arrayData=getAnimationArray("Dive");
+                case "dive":  
+                    arrayData=getAnimationArray("Dive");
                     interval=setInterval(function(){
                             textArea.value=arrayData[index];
                             index++;
@@ -136,9 +130,8 @@ window.onload=function(){
                             }    
                         },delayTime);
                     break;
-                case "custom":
-                    var index=0;    
-                    var arrayData=getAnimationArray("Custom");
+                case "custom":   
+                    arrayData=getAnimationArray("Custom");
                     interval=setInterval(function(){
                             textArea.value=arrayData[index];
                             index++;
@@ -152,4 +145,4 @@ window.onload=function(){
             }
         }
     }
-}
+};
