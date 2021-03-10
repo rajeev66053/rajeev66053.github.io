@@ -60,6 +60,7 @@ window.onload=function(){
         
         startButton.disabled=true;
         stopButton.disabled=false;
+        animationSelect.disabled = true;
         delayTime=checkSpeed();
         animation(delayTime,false);
     }
@@ -67,6 +68,7 @@ window.onload=function(){
     function stopOnClick(){
         startButton.disabled=false;
         stopButton.disabled=true;
+        animationSelect.disabled = false;
         delayTime=checkSpeed();
         animation(delayTime,true);
     }
