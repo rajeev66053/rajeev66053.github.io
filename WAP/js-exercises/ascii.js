@@ -1,150 +1,53 @@
+var textArea,startButton,stopButton,animationSelect,sizeSelect,speedCheck,interval; 
+var delayTime=250;
+function initialize(){
+    textArea=document.getElementById("myTextArea");
+    startButton=document.getElementById("start");
+    stopButton=document.getElementById("stop");
+    animationSelect=document.getElementById("animation");
+    sizeSelect=document.getElementById("size");
+    speedCheck=document.getElementById("speed");
+}
 window.onload=function(){   
     "use strict";
-    var textArea=document.getElementById("myTextArea");
-
-    var startButton=document.getElementById("start");
-    startButton.onclick=startOnClick;
-
-    var stopButton=document.getElementById("stop");
+    initialize();
     stopButton.disabled=true;
-    stopButton.onclick=stopOnClick;
     
-    var animationSelect=document.getElementById("animation");
+    startButton.onclick=function(){        
+                            startButton.disabled=true;
+                            stopButton.disabled=false;
+                            animationSelect.disabled = true;
+                            animation();                            
+                        };
+                        
+    stopButton.onclick=function (){
+                            startButton.disabled=false;
+                            stopButton.disabled=true;
+                            animationSelect.disabled = false;
+                            clearInterval(interval);
+                        };
+    
     animationSelect.onchange=function(){
-        textArea.value=ANIMATIONS[animationSelect.value];
-    };
+                                textArea.value=ANIMATIONS[animationSelect.value];
+                            };
     
-    var sizeSelect=document.getElementById("size");
-    changeFontSize(); //default;
-    sizeSelect.onchange=changeFontSize;
-    
-    function changeFontSize(){
-        var sizeSelectedValue=sizeSelect.value;
-        switch(sizeSelectedValue){
-            case "tiny":
-                textArea.style.fontSize="7pt";
-                break;
-            case "small":
-                textArea.style.fontSize="10pt";
-                break;
-            case "medium":
-                textArea.style.fontSize="12pt";
-                break;
-            case "large":
-                textArea.style.fontSize="16pt";
-                break;
-            case "extra_large":
-                textArea.style.fontSize="24pt";
-                break;
-            case "xxl":
-                textArea.style.fontSize="32pt";
-                break;
-            default:
-                textArea.style.fontSize="7pt";
-        }
-    }
-    
-    var delayTime=250;    
-    var interval;  
-    var speedCheck=document.getElementById("speed");
-    speedCheck.onchange=function(){
-        delayTime=checkSpeed();
-        animation(delayTime,false);
-    };
-
-    function checkSpeed(){
-        return (speedCheck.checked==true)? 50: 250;
-    }
-
-    function startOnClick(){
+    sizeSelect.onchange=function(){
+                            textArea.style.fontSize=sizeSelect.value;
+                        };
         
-        startButton.disabled=true;
-        stopButton.disabled=false;
-        animationSelect.disabled = true;
-        delayTime=checkSpeed();
-        animation(delayTime,false);
-    }
+    speedCheck.onchange=function(){
+                            delayTime=(speedCheck.checked==true)? 50: 250;
+                            animation();
+                        };
 
-    function stopOnClick(){
-        startButton.disabled=false;
-        stopButton.disabled=true;
-        animationSelect.disabled = false;
-        delayTime=checkSpeed();
-        animation(delayTime,true);
-    }
-
-    function getAnimationArray(animationType){
-        var data=ANIMATIONS[animationType];
-        var arrayData=data.split("=====\n");
-        return arrayData;
-    }
-
-    function animation(delayTime,stopAnimation){     
-        /*jshint sub:true*/
-        var animationSelectedvalue=animationSelect.value;        
+    function animation(){        
+        let index=0;
+        let arrayData=ANIMATIONS[animationSelect.value].split("=====\n");
         clearInterval(interval);
-        var index=0;
-        var arrayData;
-        if(stopAnimation){
-            clearInterval(interval);
-        }else{
-            switch(animationSelectedvalue){
-                case "blank":
-                    textArea.value=ANIMATIONS["Blank"];
-                    break;
-                case "exercise":   
-                    arrayData=getAnimationArray("Exercise");
-                    interval=setInterval(function(){
-                            textArea.value=arrayData[index];
-                            index++;
-                            if(index>=arrayData.length){
-                                index=0;
-                            }    
-                        },delayTime);
-                    break;
-                case "juggler":  
-                    arrayData=getAnimationArray("Juggler");
-                    interval=setInterval(function(){
-                            textArea.value=arrayData[index];
-                            index++;
-                            if(index>=arrayData.length){
-                                index=0;
-                            }    
-                        },delayTime);
-                    break;
-                case "bike":   
-                    arrayData=getAnimationArray("Bike");
-                    interval=setInterval(function(){
-                            textArea.value=arrayData[index];
-                            index++;
-                            if(index>=arrayData.length){
-                                index=0;
-                            }    
-                        },delayTime);
-                    break;
-                case "dive":  
-                    arrayData=getAnimationArray("Dive");
-                    interval=setInterval(function(){
-                            textArea.value=arrayData[index];
-                            index++;
-                            if(index>=arrayData.length){
-                                index=0;
-                            }    
-                        },delayTime);
-                    break;
-                case "custom":   
-                    arrayData=getAnimationArray("Custom");
-                    interval=setInterval(function(){
-                            textArea.value=arrayData[index];
-                            index++;
-                            if(index>=arrayData.length){
-                                index=0;
-                            }    
-                        },delayTime);
-                    break;
-                default:
-                    textArea.value=ANIMATIONS["Blank"];    
-            }
-        }
+        var displayFunction=function(){
+            textArea.value=arrayData[index];
+            index=(index+1)%arrayData.length;
+        };
+        interval=setInterval(displayFunction,delayTime);
     }
 };
