@@ -1,0 +1,125 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Scope Exercises</title>
+
+<body>
+
+    <h3>Scope Exercises</h3>
+    <div>
+        <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/ScopeExercises.pdf">Quiz pdf link</a>
+    </div>
+
+    <ol>
+        <li>
+            <p> Determine what this Javascript code will print out (without running it):</p>
+            <pre>
+                x = 1;
+                var a = 5;
+                var b = 10;
+                var c = function(a, b, c) {
+                                            var x = 10;
+                                            document.write(x);
+                                            document.write(a);
+                                            var f = function(a, b, c) {
+                                                                        b = a;
+                                                                        document.write(b);
+                                                                        b = c;
+                                                                        var x = 5;
+                                                                    }
+                                            f(a,b,c);
+                                            document.write(b);
+                                        }
+                c(8,9,10);
+                document.write(b);
+                document.write(x);
+                }
+            </pre>
+            <p>
+                10,8,8,9,10,1
+            </p>
+        </li>
+        <li>
+            <p> What is the difference between a method and function?</p>
+            <p>A function is a block of code written to perform some specific set of tasks. We can define a function using the function keyword, followed by Name and optional parameters. Body of function is enclosed in Curly braces.</p>
+            <p> A JavaScript method is a property of an object that contains a function definition. Methods are functions stored as object properties. </p>
+        </li>
+        <li>
+            <p>What does 'this' refer to when used in a Java method?</p>
+            <p>Within an instance method or a constructor, this is a reference to the current object — the object whose method or constructor is being called. </p>
+        </li>
+        <li>
+            <p>What does 'this' refer to when used in a JavaScript method?</p>
+            <p>In JavaScript, the property of an object can be a method or a simple value. When an object's method is invoked, then this refers to the object which contains the method being invoked.</p>
+        </li>
+        <li>
+            <p>What does 'this' refer to when used in a JavaScript constructor function?</p>
+            <p>The value of this , when used in an object, is the object itself. In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.</p>
+        </li>
+        <li><p>Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'. When f is called by x.f( ), what does 'this' refer to?</p>
+        <p>when x.f() is called, 'this' refers to x.</p></li>
+        <li>
+            <p>What is a free variable in JavaScript?</p>
+            <p>Free variables are simply the variables that are neither locally declared nor passed as parameter.In javascript closures, those are simply the variables that the function takes (read and write) in the enclosing scope where is declared the closure or in a parent scope.</p>
+        </li>
+        <li><p>Create an object that has properties with name = "fred" and major="music" and a property that is a function that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.</p>
+            <pre>
+                var obj={
+                    name:"fred",
+                    major:"music",
+                    use: function(x,y) {
+                           if(x==y){
+                              return Math.sqrt(x);
+                           }else{
+                              return (x&lty)?x:y;
+                           }
+                        }
+                  };
+            </pre>
+        </li>
+        <li><p>Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.</p>
+            <pre>
+                function Employee(name, salary, position) {
+                                this.name = name;
+                                this.salary = age;
+                                this.position = position;
+                    }
+                var e1 = new Employee("George Smith", 35000, "Manager");
+                var e2 = new Employee("Ken Jones", 20000, "Employee");
+                var e3 = new Employee("John Smith", 15000, "Employee");
+            </pre>
+        </li>
+        <li>
+            <p>Write a Javascript function that takes any number of input arguments and returns the product of the arguments.</p>
+            <pre>
+                function product(x,y, ...more){
+                            var total = x * y;
+                            if(more.length > 0){
+                                for (var i=0;i&ltmore.length; i++) {
+                                    total *= more[i];
+                                }
+                            }
+                        console.log(total);
+                        }
+                product(4,3);
+                product(4,3,2);
+
+            </pre>
+        </li>
+        <li><p>Write an arrow function that returns the maximum of its three input arguments.</p>
+            <pre>
+                    var multiply = (num1, num2,num3)=> {
+                                                            if(num2>num1 && num2>num3){
+                                                            return num2;
+                                                            }else if(num3>num1 && num3>num2){
+                                                            return num3;
+                                                            }else{
+                                                            return num1;
+                                                            }
+                                                    };
+
+                console.log(multiply(4,6,2));
+            </pre>
+        </li>
+    </ol>
+</body>
+</head>
