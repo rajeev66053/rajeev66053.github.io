@@ -1,14 +1,15 @@
-var rudyTimer=(() => {
-    return () => {
-        timer = null;
-        if (timer === null) {
-            timer = setInterval(rudy, 1000);
-        } else {
-            clearInterval(timer);
-            timer = null;
-        }
-    }
-})();
+var rudyTimer=(function(){
+                        var timer = null;
+                        function delayMsg2() {
+                            if (timer === null) {
+                                timer = setInterval(rudy, 1000);
+                            } else {
+                                clearInterval(timer);
+                                timer = null;
+                            }
+                        }
+                        return delayMsg2;
+                })();
 function rudy() { // called each time the timer goes off
     document.getElementById("output").innerHTML += "Rudy!";
 }
