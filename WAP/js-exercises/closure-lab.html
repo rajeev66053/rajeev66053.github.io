@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+   <html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Modules and Closure</title>
+    </head>
+
+    <body>
+
+        <h3>Modules and Closure</h3>
+        <div>
+            <a href="http://mumstudents.org/cs472/2014-02/resources/closures/closureLab.pdf">Quiz pdf link</a>
+        </div>
+
+        <ol>
+            <li><p>Rewrite the setInterval example (the one with function delayMsg2 that prints out ‘Rudy!’) to use the module
+                pattern. Call the module ‘rudyTimer’. I.e., varrudyTimer’= (… )() and then use the module as the event handler
+                on the button. I.e., &ltbutton onclick="rudyTimer()"&gtClick me!&lt/button&gt</p>
+                <pre>
+                   &ltbutton onclick=" rudyTimer.delayMsg2()"&gtClick me!&lt/button&gt
+                   &ltdiv id="output">&lt/div&gt 
+                   &ltscript&gt
+                        var rudyTimer=(function(){
+                                                var timer = null; // stores ID of interval timer
+                                                function delayMsg2() {
+                                                    if (timer === null) {
+                                                        timer = setInterval(rudy, 1000);
+                                                    } else {
+                                                        clearInterval(timer);
+                                                        timer = null;
+                                                    }
+                                                }
+
+                                                return{
+                                                    delayMsg2:function(){
+                                                        delayMsg2();
+                                                    }
+                                                }
+
+                                                function rudy() { // called each time the timer goes off
+                                                        document.getElementById("output").innerHTML += "Rudy!";
+                                                    }
+
+                                    })();
+                                    &lt/script&gt
+                </pre>
+            
+            </li>
+        </ol>
+    </body>
+</head>
