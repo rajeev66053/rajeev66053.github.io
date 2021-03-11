@@ -43,15 +43,15 @@
             <p>The setTimeout without function parenthesis take the timeout value to display output but the  setTimeout with function parenthesis doesnot take time value. It will give output instantly.</p>
 
             <pre>
-                    setTimeout(booyah1, 2000);
-                    setTimeout(booyah2, 2000);
-                    function booyah1(){
-                       alert("BOOYAH!");
-                    }
-        
-                    function booyah2(){
-                       alert("BOOYAH!");
-                    }
+                setTimeout(booyah1, 2000);
+                setTimeout(booyah2(), 2000);
+                function booyah1(){
+                   alert("BOOYAH1!");
+                }
+    
+                function booyah2(){
+                   setTimeout(alert,2000,"BOOYAH2!");
+                }
             </pre>
         </li>
         <li>
