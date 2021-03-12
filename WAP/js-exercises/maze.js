@@ -4,6 +4,7 @@ $( document ).ready(function() {
     if(gameStart){
       $("#maze .boundary").addClass("youlose");
       $("#status").text("You lose!");
+      gameStart=false;
     }
   });
 
@@ -11,8 +12,14 @@ $( document ).ready(function() {
     if(gameStart){
       $("#maze .boundary").addClass("youlose");
       $("#status").text("You lose.");
+      gameStart=false;
     }
   });
+
+  $("#start").mouseover(function(){
+    $(this).css("cursor","pointer");
+  });
+
 
   $("#start").click(function(){
     gameStart=true;
@@ -21,8 +28,11 @@ $( document ).ready(function() {
   });
 
   $("#end").mouseover(function(){ 
-    gameStart=false;   
-    $("#status").text("You win!");
+    $(this).css("cursor","pointer");
+    if(gameStart){
+      $("#status").text("You win!");
+      gameStart=false;
+    } 
   });
 
 });
