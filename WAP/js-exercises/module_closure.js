@@ -14,39 +14,41 @@ function rudy() { // called each time the timer goes off
     document.getElementById("output").innerHTML += "Rudy!";
 }
 
-var textArea, accountNameInput, depositInput, createNewAccountBtn;
-var accountInfoList = [];
+var textArea, accountName, deposit, createNewAccount;
+var accountInfo = [];
 
-var createAccount = (accountName, deposit) => {
+var createAccount = function(accountName, deposit){
     return {
         'accountName': accountName,
         'deposit': deposit,
-        'toString': () => {
+        'toString': function(){
             return `Account name: ${accountName}  Balance: ${deposit}`;
         }
     }
 };
 
-var createNewAccountBtnHandler = () => {
-    let newAccount = createAccount(
-        accountNameInput.value,
-        depositInput.value
-    );
+window.onload = function(){
 
-    textArea.value = textArea.value + 
-                        (accountInfoList.length === 0 ? "": "\n") +
-                        newAccount.toString();
+    accountName = document.getElementById("accountName");
+    deposit = document.getElementById("deposit");
+    textArea = document.getElementById("textArea");
+    createNewAccount = document.getElementById("createNewAccount");
 
-    accountInfoList.push(newAccount);
-    console.log("Account Info List:", accountInfoList);
+    createNewAccount.onclick = newAccount;
 };
 
-window.onload = () => {
+var newAccount = function(){
+    if(accountName.value && deposit.value){
+        let newAccountObj = createAccount(
+            accountName.value,
+            deposit.value
+        );
+        textArea.value = textArea.value + (accountInfo.length === 0 ? "": "\n") + newAccountObj.toString();    
+        accountInfo.push(newAccountObj);
+        accountName.value="";
+        deposit.value="";
+    }
+    
 
-    accountNameInput = document.getElementById("accountName");
-    depositInput = document.getElementById("deposit");
-    textArea = document.getElementById("textArea");
-    createNewAccountBtn = document.getElementById("createNewAccountBtn");
 
-    createNewAccountBtn.onclick = createNewAccountBtnHandler;
 };
