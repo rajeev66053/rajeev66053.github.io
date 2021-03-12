@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+   <html lang="en-US">
+
+        <head>
+
+            <meta charset="UTF-8">
+            <meta name="referrer" content="origin-when-cross-origin">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>jQuery Quiz I</title>
+        </head>
+
+        <body>
+        
+            <h3>jQuery Quiz I</h3>
+            <div>
+                <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/jQueryQuizI.pdf">Quiz pdf link</a>
+            </div>
+        
+            <ol>
+                <li>
+                    <p> In jQuery terminology, what is the difference between the “jQuery function” and the “jQuery object”? </p>
+                    <p>Most jQuery methods are called on jQuery objects as shown below;these methods are said to be part of the $.fn namespace, or the "jQuery prototype," and are best thought of as jQuery object methods.</p>
+                    <p>$( "h1" ).remove();</p>
+                    <p>Locate the element(s) we want to modify by using the top-level $ function, which will return them as a jQuery Object which acts like an "array" of DOM objects. This jQuery Object is commonly called the "selection".</p>
+                    <p>The $ in the jQuery code is just a shorter, more convenient name for the jQuery function.</p>
+                    
+                </li>
+                <li><p>Write jQuery code to find all h1 elements that are children of a div element and make their background color red.</p>
+                    <p>Sample HTML:</p>
+                    <pre>
+                    &ltbody&gt
+                        &lth1>abc&lt/h1&gt&ltbr&gt&ltdiv&gt
+                        &lth1>div-1&lt/h1&gt
+                        &lth1>div-2&lt/h1&gt
+                        &lt/div&gt
+                        &lth1>xyz&lt/h1&gt
+                    &lt/body&gt
+                    </pre>
+                    <p>
+                    <pre>
+                    $( document ).ready(function() {
+                        $("div h1").css("background-color","red");
+                    });
+                    </pre>
+                    </p>
+                    
+                </li>
+                <li>
+                    <p>Use a jQuery method to insert the text "YES!" at the end of the &ltp&gt element.</p>
+                    <pre>
+                    &lt!DOCTYPE html&gt
+                        &lthtml&gt
+                        &lthead&gt
+                        &ltscript&gt
+
+                        &lt!—INSERT YOUR JQUERY CODE HERE - - &gt
+
+                        &lt/script&gt
+                        &lt/head&gt
+                        &ltbody&gt
+
+                        &ltp&gtIs jQuery FUN or what? &lt/p&gt
+
+                        &lt/body&gt
+                    &lt/html&gt
+                    </pre>
+                    <p>
+                    <pre>
+                    $( document ).ready(function() {
+                        $("p").append("YES!");
+                    });
+                    </pre>
+                    </p>
+                    
+                </li>
+            </ol>
