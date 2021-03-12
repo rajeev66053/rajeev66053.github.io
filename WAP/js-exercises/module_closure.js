@@ -17,16 +17,6 @@ function rudy() { // called each time the timer goes off
 var textArea, accountName, deposit, createNewAccount;
 var accountInfo = [];
 
-var createAccount = function(accountName, deposit){
-    return {
-        'accountName': accountName,
-        'deposit': deposit,
-        'toString': function(){
-            return `Account name: ${accountName}  Balance: ${deposit}`;
-        }
-    }
-};
-
 window.onload = function(){
 
     accountName = document.getElementById("accountName");
@@ -47,8 +37,15 @@ var newAccount = function(){
         accountInfo.push(newAccountObj);
         accountName.value="";
         deposit.value="";
+    }  
+};
+
+var createAccount = function(accountName, deposit){
+    return {
+        'accountName': accountName,
+        'deposit': deposit,
+        'toString': function(){
+            return `Account name: ${accountName}  Balance: ${deposit}`;
+        }
     }
-    
-
-
 };
