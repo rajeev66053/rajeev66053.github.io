@@ -17,14 +17,21 @@ window.onload=function(){
                             startButton.disabled=true;
                             stopButton.disabled=false;
                             animationSelect.disabled = true;
-                            animation();                            
+                            let index=0;
+                            let arrayData=ANIMATIONS[animationSelect.value].split("=====\n");
+                            var displayFunction=function(){
+                                textArea.value=arrayData[index];
+                                index=(index+1)%arrayData.length;
+                                interval=setTimeout(displayFunction,delayTime);
+                            };
+                            setTimeout(displayFunction,delayTime);                            
                         };
                         
     stopButton.onclick=function (){
                             startButton.disabled=false;
                             stopButton.disabled=true;
                             animationSelect.disabled = false;
-                            clearInterval(interval);
+                            clearTimeout(interval);
                         };
     
     animationSelect.onchange=function(){
@@ -37,17 +44,5 @@ window.onload=function(){
         
     speedCheck.onchange=function(){
                             delayTime=(speedCheck.checked==true)? 50: 250;
-                            animation();
                         };
-
-    function animation(){        
-        let index=0;
-        let arrayData=ANIMATIONS[animationSelect.value].split("=====\n");
-        clearInterval(interval);
-        var displayFunction=function(){
-            textArea.value=arrayData[index];
-            index=(index+1)%arrayData.length;
-        };
-        interval=setInterval(displayFunction,delayTime);
-    }
 };
