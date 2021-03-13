@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+   <html lang="en-US">
+
+        <head>
+
+            <meta charset="UTF-8">
+            <meta name="referrer" content="origin-when-cross-origin">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>jQuery Quiz II</title>
+        </head>
+
+        <body>
+        
+            <h3>jQuery Quiz II</h3>
+            <div>
+                <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/jQueryQuizII.pdf">Quiz pdf link</a>
+            </div>
+        
+            <ol>
+                <li>
+                    <p> Which, if any, of the following 3 code fragments are equivalent? Explain why they are different, if they are. Explain why they can have different parameters and be equivalent, if they are equivalent. </p>
+                    <pre>
+                    //code fragment 1
+                    $("li").each(function(idx, e) {
+                    $(e).css(“color”, “yellow”); });
+
+                    //code fragment 2
+                    $("li").each(function() {
+                    $(this).css(“color”, “yellow”); });
+
+                    //code fragment 3
+                    $("li").each(function(idx) {
+                    $(this).css(“color”, “yellow”); });
+
+                    </pre>
+                    <p>All of the code fragments are equivalent. In first fragment there are two parameters the first is index position of element and the second is current element.So the css is applied to element using passes selector(i.e "e").In the second code fragments the parameters is not passed so css is applied to current selector(li) using "this" keyword. So there is no need to pass element in function.In the third code fragment there index is passed as parameter but "this" kyword is uses to apply css for current selctor. </p>
+                </li>
+                <li><p>Write a jQuery expression to find all divs on a page that include an unordered list in them, and make their text color be blue.</p>
+                    <pre>
+                            &ltdiv&gt no ul here &lt/div&gt
+                            &ltdiv&gt
+                            This does contain a ul.
+                            &ltul&gt
+                            &ltli&gt the first item &lt/li&gt
+                            &ltli&gt the second item &lt/li&gt
+                            &lt/ul&gt
+                            &lt/div&gt
+                            &ltscript&gt
+                            <!—INSERT YOUR JQUERY CODE HERE - - >
+                        &lt/script&gt
+                    &lt/body&gt
+                    </pre>
+                    <p>
+                    <pre>
+                        $(function(){
+                            $("div").has("ul").css("color","blue");
+                            });
+                    </pre>
+                    </p>
+                                                           
+                </li>
+                <li>
+                    <p>Write jQuery code to append the following div element (and all of its contents) dynamically to the body element.</p>
+
+                    <p>&ltdiv&gt&lth1&gtJQuery Core&lt/h1&gt&lt/div&gt</p>
+                    <p>HTML:</p>
+                    <pre>
+                    &lt!DOCTYPE html&gt
+                        &lthtml&gt
+                        &lthead&gt
+                        &ltmeta charset="utf-8"&gt
+                        &lttitle&gtJS Bin&lt/title&gt                        
+                        &lt/head&gt
+                        &ltbody&gt
+
+                        &lt/body&gt
+                    &lt/html&gt
+                    </pre>
+                    <p>
+                    <pre>
+                        $(function(){
+                            $("body").append("<div><h1>JQuery Core</h1></div>");
+                            });
+                    </pre>
+                    </p>
+                                        
+                </li>
+            </ol>
