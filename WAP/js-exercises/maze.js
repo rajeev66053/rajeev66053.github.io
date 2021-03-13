@@ -1,5 +1,6 @@
-$( document ).ready(function() {
+$( document ).ready(function() {  
   var gameStart = false;
+  $("#congratzImg").hide();
   $("#maze .boundary").mouseover(function(){
     if(gameStart){
       $("#maze .boundary").addClass("youlose");
@@ -31,6 +32,7 @@ $( document ).ready(function() {
     $(this).css("cursor","pointer");
     if(gameStart){
       $("#status").text("You win!");
+      $("#congratzImg").show();
       gameStart=false;
     } 
   });
