@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+   <html lang="en-US">
+
+        <head>
+
+            <meta charset="UTF-8">
+            <meta name="referrer" content="origin-when-cross-origin">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>Module Exercises</title>
+        </head>
+
+        <body>
+        
+            <h3>ModuleExercises</h3>
+            <div>
+                <a href="http://mumstudents.org/cs472/2019-05-BL/quiz/jQueryQuizII.pdf">Quiz pdf link</a>
+            </div>
+        
+            <ol start="14">
+                <li>
+                    What is the output of the following code?
+                    <pre>
+                        const promise = new Promise((resolve, reject) => {
+                                reject(“Hattori”);
+                            });
+                            promise.then(val => alert(“Success: “ + val))
+                                .catch(e => alert(“Error: “ + e));
+                    </pre>
+                    <p>
+
+                    </p>
+
+                </li>
+                <li>
+                    What is the output of the following code?
+                    <pre>
+                        const promise = new Promise((resolve, reject) => {
+                                resolve(“Hattori”);
+                                setTimeout(()=> reject(“Yoshi”), 500);
+                            });
+                            promise.then(val => alert(“Success: “ + val))
+                                .catch(e => alert(“Error: “ + e));
+                    </pre>
+                </li>
+                <li>
+                    What is the output of the following code?
+                    <pre>
+                        function job(state) {
+                            return new Promise(function(resolve, reject) {
+                                if (state) {
+                                    resolve('success');
+                                } else {
+                                    reject('error');
+                                }
+                            });
+                           }
+
+                           let promise = job(true);
+
+                           promise.then(function(data) {
+                                    console.log(data);
+                                    return job(false);})
+                                .catch(function(error) {
+                                    console.log(error);
+                                    return 'Error caught';
+                                });
+                    </pre>
+                </li>
+            </ol>
+        </body>
+    </html>
